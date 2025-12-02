@@ -1,0 +1,13 @@
+{
+    "name": "user/project",
+    "autoload": {
+        "psr-4": {
+            "User\\Project\\": "src/"
+        }
+    },
+    "require": {
+        "monolog/monolog": "^3.9",
+        "symfony/var-dumper": "^7.3",
+        "jenssegers/agent": "^2.6"
+    }
+}
