@@ -3,9 +3,15 @@
 require 'vendor/autoload.php';
 
 use Jenssegers\Agent\Agent;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
-// Створюємо екземпляр
+$log = new Logger('user_agent');
+$log->pushHandler(new StreamHandler (__DIR__ . '/agent.log', Logger::INFO));
+
 $agent = new Agent();
+
+dump($agent);
 
 // Приклади використання
 echo "Пристрій: " . ($agent->isMobile() ? 'Мобільний' : 'Не мобільний') . "\n";
